@@ -1,0 +1,78 @@
+@import "init.scss";
+@import "constant.scss";
+
+$navHeight: 64px; //定义变量
+
+
+body{
+    background-color: #cfd1ff;
+}
+
+//头部
+header{
+    width: 100%;
+    height: $navHeight;
+    background: #3a3a3a;
+    // 存放头部的内容
+    .contain{
+        width: $pageWidth;
+        height: 100%; // 相对header
+        margin: 0 auto;
+        overflow: hidden;
+        // logo
+        .logo-box{
+            width: 140px;
+            height: 48px;
+            background: url("https://www.xfz.cn/static/build/images/logo.png");
+            margin-top: 8px;
+            float: left;  // 需要左浮动才能让导航条向左浮动
+            // 可以点击a标签
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        //导航条
+        .nav{
+            margin-left: 120px;
+            float: left;
+            // 导航条文字
+            li{
+                list-style: none;
+                float: left; //文字水平
+                margin-right: 41px;
+                // 进行居中
+                line-height: $navHeight;
+                height: $navHeight;
+                // 任何border都得在本盒子（li）里显示
+                box-sizing: border-box;
+                a{
+                    color: #fff;
+                }
+                // 标签里添加class需要加&（选中样式）
+                &.active{
+                    border-bottom: 5px solid #5c87d9;
+                }
+            }
+        }
+
+        // 登录注册，按钮
+        .auth-box{
+            float: right;
+            line-height: $navHeight;
+            color: #fff;
+
+            // 图标
+            .iconfont{
+                color: #fff;
+                font-size: 20px; //i标签大小可以用font-size调节
+            }
+            // 登录、注册文字
+            a{
+                color: #fff;
+            }
+        }
+    }
+}
