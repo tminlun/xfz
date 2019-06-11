@@ -2,50 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9df03c-cd03-4d23-87d6-bffeffe617d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Account/apps/expenses/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Account/apps/expenses/migrations/0002_auto_20190505_1304.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Account/apps/expenses/migrations/0003_auto_20190505_1305.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Account/apps/expenses/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Account/apps/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/apps/trade/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/apps/trade/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/apps/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/apps/users/migrations/0002_emailverifyrecord.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/apps/users/migrations/0003_delete_emailverifyrecord.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/apps/users/migrations/0004_userprofile_openid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/apps/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/extra_apps/xadmin/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PetTrade/extra_apps/xadmin/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/apps/Cloud/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/apps/Cloud/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/apps/myaccount/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/apps/myaccount/migrations/0002_auto_20190403_1535.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/apps/myaccount/migrations/0003_auto_20190403_1909.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/apps/myaccount/migrations/0004_auto_20190403_1944.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/apps/myaccount/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/extra_apps/xadmin/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Resources/extra_apps/xadmin/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0002_category_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0003_auto_20190422_1847.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0004_auto_20190422_1850.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0005_auto_20190422_1851.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0006_rightwrongsub.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0007_examtime.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0008_auto_20190423_2024.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0009_examtime_exam_number.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/0010_auto_20190506_1526.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/topic/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/user_operation/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/user_operation/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/users/migrations/0002_emailverifyrecord.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/users/migrations/0003_auto_20190423_1402.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/users/migrations/0004_auto_20190425_1230.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/users/migrations/0005_auto_20190425_1233.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/users/migrations/0006_userprofile_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Subject/apps/users/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SimplLibrary/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SimplLibrary/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/dist/css/index.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/dist/css/index.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/constant.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/constant.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/templates/news/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/news/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,14 +18,17 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.43230563">
+    <splitter split-orientation="horizontal" split-proportion="0.4235925">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/front/templates/news/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+                <state relative-caret-position="359">
+                  <caret line="39" column="54" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="54" />
+                  <folding>
+                    <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -72,15 +36,30 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/front/src/css/init.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="200">
+                  <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/front/src/css/index.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-                  <folding>
-                    <element signature="e#318#678#0" />
-                  </folding>
+                <state relative-caret-position="284">
+                  <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/front/src/css/constant.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="3" column="13" selection-start-line="3" selection-end-line="3" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -120,10 +99,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
-    <option name="width" value="1555" />
-    <option name="height" value="790" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-175" />
+    <option name="y" value="30" />
+    <option name="width" value="1135" />
+    <option name="height" value="880" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -156,19 +136,6 @@
               <item name="front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xfz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xfz" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xfz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xfz" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -237,11 +204,14 @@
       <workItem from="1559044518566" duration="4377000" />
       <workItem from="1559219590366" duration="28000" />
       <workItem from="1559455830931" duration="8006000" />
+      <workItem from="1559728198558" duration="1104000" />
+      <workItem from="1559817651308" duration="590000" />
+      <workItem from="1560253762743" duration="5025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18488000" />
+    <option name="totallyTimeSpent" value="25207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -253,9 +223,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.30016863" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.30764076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -269,7 +240,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.394" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.04249292" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -291,13 +262,6 @@
     <entry file="file://$PROJECT_DIR$/xfz/urls.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/PycharmProjects/Regular/c3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -312,10 +276,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/css/constant.scss">
+    <entry file="file://$PROJECT_DIR$/front/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="425">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -326,20 +290,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/css/constant.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="13" selection-start-line="3" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/news/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        <state relative-caret-position="359">
+          <caret line="39" column="54" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="54" />
+          <folding>
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/css/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#318#678#0" />
-          </folding>
+        <state relative-caret-position="284">
+          <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
         </state>
       </provider>
     </entry>

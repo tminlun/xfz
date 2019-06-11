@@ -13,6 +13,12 @@ header{
     width: 100%;
     height: $navHeight;
     background: #3a3a3a;
+    position: fixed;// 固定定位。但会覆盖下面的盒子，解决只需在下面盒子设置margin-top
+    left: 0;
+    top: 0;
+    right: 0;
+    //opacity: 0.5; // 半透明
+
     // 存放头部的内容
     .contain{
         width: $pageWidth;
@@ -75,4 +81,61 @@ header{
             }
         }
     }
+}
+
+// 内容
+.main{
+  width: 100%;
+  margin-top: $navHeight + 20px; // 不被导航条覆盖
+
+  // 版型
+  .wrapper{
+    width: $pageWidth;
+    height: 1000px;
+    margin: 0 auto;
+    background: darkgoldenrod;
+    overflow: hidden; // 子盒子有浮动必须清除浮动：获取子盒子的元素：（高度、宽度）
+  }
+  //左栏
+  .news-wrapper{
+    float: left;
+    width: $mainBoxWidth;
+    height: 500px;
+    background: #fff;
+
+    // 轮播图
+    .banner-group{
+      // 对全局变量进行改名
+      $bannerWidth : $mainBoxWidth;
+      $bannerHeight: 202px;
+
+      width: 100%;
+      height: $bannerHeight;
+      background: #5c87d9;
+
+      // 火车总容器
+      .banner-ul{
+        overflow: hidden; // 获取每节火车的元素
+        width: $bannerWidth * 4;  //火车总容器宽度
+        // 每个火车节
+        li{
+          float: left;
+          width: $bannerWidth;
+          height: $bannerHeight;
+
+          img{
+            width: $bannerWidth;
+            height: $bannerHeight;
+          }
+        }
+      }
+    }
+  }
+  //右栏
+  .sidebar-wrapper{
+    float: right;
+    width: $mainSidebarWidth;
+    height: 500px;
+    background: #ccc;
+  }
 }
