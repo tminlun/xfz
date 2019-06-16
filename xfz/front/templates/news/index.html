@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../../dist/css/index.min.css">
     <!-- 引入图标 -->
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1223995_80xp5izxk6.css">
+    <script src="../../dist/js/jquery-3.3.1.min.js"></script>
+    <script src="../../dist/js/index.min.js"></script>
 </head>
 <body>
    <!-- 头部 -->
@@ -37,14 +39,44 @@
             <!-- 左栏内容 -->
             <div class="news-wrapper">
                 <!-- 轮播图 -->
-                <div class="banner-group"><!-- 窗口（每节火车都要经过窗口） -->
+                <div class="banner-group" id="banner-group"><!-- 窗口（每节火车都要经过窗口） -->
                     <!-- 装每节火车的总容器 -->
-                    <ul class="banner-ul">
-                       <li> <a href=""><img src="https://static-image.xfz.cn/1554346383_8.png" alt=""></a></li>
-                       <li> <a href=""><img src="https://static-image.xfz.cn/1558676231_156.png" alt=""></a></li>
-                       <li> <a href=""><img src="https://static-image.xfz.cn/1558676231_156.png" alt=""></a></li>
-                       <li> <a href=""><img src="https://static-image.xfz.cn/1558676231_156.png" alt=""></a></li>
+                    <ul id="banner-ul" class="banner-ul">
+                       <li>
+                            <a href="#">
+                                <img src="https://static-image.xfz.cn/1523588994_243.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://static-image.xfz.cn/1523504442_455.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://static-image.xfz.cn/1521444982_469.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://static-image.xfz.cn/1522742329_629.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://static-image.xfz.cn/1522742329_629.png" alt="">
+                            </a>
+                        </li>
+
                     </ul>
+                    <!-- 轮播箭头 -->
+                    <span class="arrow left-arrow">‹</span>
+                    <span class="arrow right-arrow">›</span>
+                    <!-- 轮播图圆点 -->
+                    <div class="page-control-group"><!-- 圆点盒子 -->
+                        <ul class="page-control"><!-- 圆点的版型（居中） -->
+                        </ul>
+                    </div>
                 </div>
             </div>
             <!-- 右栏内容 -->

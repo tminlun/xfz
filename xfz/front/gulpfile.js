@@ -7,6 +7,11 @@ var imagemin = require("gulp-imagemin");
 var cache = require("gulp-cache");
 var bs = require("browser-sync").create();  //创建一个服务器，刷新浏览器
 var sass = require("gulp-sass");  // 将sass转换为css
+// 打印js错误，防止js出现错误时退出gulp
+var util = require("gulp-util");
+// 通过压缩过的min.js文件很难找到那段错误，查找错误时通过gulp-sourcemaps查找未压缩文件
+var sourcemaps = require("gulp-sourcemaps");
+
 
 // 动态定义路径
 var path = {
@@ -35,8 +40,10 @@ gulp.task("css", function () {
 
 gulp.task("js", function () {
    gulp.src(path.js + '*.js') // 找到所有的css文件
-   .pipe(uglify())  // 压缩
+   .pipe(sourcemaps.init()) // 源文件错误的具体位置
+   .pipe(uglify().on("error", util.log))  // 压缩并打印错误
    .pipe(rename({"suffix": ".min"}))  // 改名
+   .pipe(sourcemaps.write())// 源文件错误的具体位置
    .pipe(gulp.dest(path.js_dist))  //存放压缩文件
    .pipe(bs.stream())  // 刷新
 });
