@@ -111,20 +111,20 @@ Banner.prototype.animate = function(){
             // 继续轮播相对于第二张的下一张
             self.index = 2;
         }
-        // 否则继续轮播下一张
+        // 轮播下一张
         else{
             // self.index这里把值保存到self.index，所以鼠标移出的时候再次轮播获取的index已经有值
             self.index++;  // 第一张轮播图left：0（-798 * 0），第二张left才是 -798
         }
 
-        // 轮播一次
+        // 每2秒轮播一次
         self.animate();
 
     }, 2000);
  };
 
 
-// 轮播箭头开关
+// 箭头显示和隐藏
 Banner.prototype.toggleArrow = function(isShow){
      var self = this;
      // 显示箭头
@@ -141,21 +141,37 @@ Banner.prototype.toggleArrow = function(isShow){
  };
 
 // 监听
+// 鼠标移进，停止轮播。鼠标移出，继续轮播下一张
+Banner.prototype.listenBannerHover = function(){
+     // 要引入其他函数属性，必须把this（类的对象）赋值给一个变量（self）
+    // 因为每个函数的this只代表本身，并非类的对象
+    var self = this;
+    this.bannerGroup.hover(function () {
+        //第一个函数，鼠标移进bannerGroup（窗口）
+        clearInterval(self.timer);//停止轮播
+        self.toggleArrow(true);// 显示箭头
+    },function () {
+        // 第二函数，鼠标移出bannerGroup（窗口）
+        self.loop();//继续轮播
+        self.toggleArrow(false);//隐藏箭头
+    });
+};
+
  //轮播图上下切换
 Banner.prototype.listenArrowClick = function(){
     var self = this;
     //左箭头点击事件: 切换上一张
     self.leftArrow.click(function () {
-        // 点击的是第一张，切换到最后一张（[2][0][1][2][0]）
+        // 点击的是第一张（其实是最后一张），无影到倒数第二张，才进行轮播倒数第三张（[2][0][1][2][0]）
         if (self.index === 0){
             self.bannerUl.css({"left": self.bannerCount*(-self.bannerWidth)}); //无影到倒数第二张
-            self.index = self.bannerCount - 1
+            self.index = self.bannerCount - 1 // 轮播倒数第三张
         }
         // 切换上一张
         else{
             self.index--;
         }
-        // 切换上一张
+        //  切换上一张后，进行过渡
         self.animate();
 
     });
@@ -174,30 +190,14 @@ Banner.prototype.listenArrowClick = function(){
     });
 };
 
-// 鼠标移进，停止轮播。鼠标移出，继续轮播下一张
-Banner.prototype.listenBannerHover = function(){
-     // 要引入其他函数属性，必须把this（类的对象）赋值给一个变量（self）
-    // 因为每个函数的this只代表本身，并非类的对象
-    var self = this;
-    this.bannerGroup.hover(function () {
-        //第一个函数，鼠标移进bannerGroup（窗口）
-        clearInterval(self.timer);//停止轮播
-        self.toggleArrow(true);// 显示箭头
-    },function () {
-        // 第二函数，鼠标移出bannerGroup（窗口）
-        self.loop();//继续轮播
-        self.toggleArrow(false);//隐藏箭头
-    });
-};
-
 //监听圆点点击
 Banner.prototype.listenPageControl = function(){
     var self = this;
-    // ul的子元素
+    // ul的子元素：所有圆点
     self.pageControl.children("li").each(function (index, obj) {// each：遍历pageControl子节点， index：子节点的下标；obj：子节点标签
         // 把obj（js对象），包装成jQuery对象。再执行点击圆点事件
         $(obj).click(function () {
-            self.index = index; //赋值index值
+            self.index = index; //赋值index值。这是点击圆点操作时，根据圆点的index转跳到相应的图片
             self.animate(); //点击圆点：轮播相应图片、圆点选中
         });
     });

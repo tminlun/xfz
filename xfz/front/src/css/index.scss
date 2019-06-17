@@ -5,7 +5,7 @@ $navHeight: 64px; //定义变量
 
 
 body{
-    background-color: #cfd1ff;
+    background-color: #f2f2f2;
 }
 
 //头部
@@ -85,6 +85,7 @@ header{
 }
 
 // 内容
+// 左右栏和轮播图
 .main{
   width: 100%;
   margin-top: $navHeight + 20px; // 不被导航条覆盖
@@ -92,17 +93,13 @@ header{
   // 版型
   .wrapper{
     width: $pageWidth;
-    height: 1000px;
     margin: 0 auto;
-    background: darkgoldenrod;
     overflow: hidden; // 子盒子有浮动必须清除浮动：获取子盒子的元素：（高度、宽度）
   }
   //左栏
   .news-wrapper{
     float: left;
     width: $mainBoxWidth;
-    height: 500px;
-    background: #fff;
 
     // 轮播图
     // 窗口
@@ -117,7 +114,6 @@ header{
       position: relative;
       overflow: hidden; //隐藏溢出的子盒子
       z-index: 0; // 堆叠顺序在后
-
 
       // 火车总容器：ul
       .banner-ul{
@@ -196,11 +192,169 @@ header{
 
     }
   }
-  //右栏
-  .sidebar-wrapper{
-    float: right;
-    width: $mainSidebarWidth;
-    height: 500px;
-    background: #ccc;
+
+}
+
+// 新闻列表
+.main{
+  .wrapper{
+    .news-wrapper{
+      // 新闻
+      .list-outer-group{
+          background: #fff;
+          margin-top: 20px;
+
+          // 新闻分类
+          .list-tab{
+            width: 100%;
+            height: 66px;
+            border: 1px solid #eee;
+            border-left: none;
+            border-right: none;
+            overflow: hidden;
+
+            li{
+              float: left;
+              padding: 0 10px;
+              margin-top: 20px;
+
+                // 必须在a标签，才能设置字体颜色
+                a{
+                  color: #878787;
+                }
+                // 第一个li标签
+                &:first-of-type{
+                  border-left: 5px solid $themeColor;
+                }
+                // 相对于li的class属性的a标签
+                &.active a{
+                    color: #212121;
+                }
+            }
+          }
+
+          // 新闻详情列表
+          .list-inner-group{
+
+            // 左边（图片）和右边（新闻内容）
+              li{
+                  padding: 20px;
+                  overflow: hidden;
+                  border-bottom: 1px solid #eee;
+
+                  // 左边（图片）
+                  .thumbnail-group{
+                    float: left;
+                    width: 226px;
+                    height: 161px;
+                    a img{
+                      width: 100%;
+                      height: 100%;
+                    }
+                  }
+                  // 右边（新闻内容）
+                  .new-group{
+                      float: right;
+                      width: 500px;
+                      height: 161px;
+                      position: relative;
+
+                      // 标题
+                      .title{
+                          font-size: 20px;
+                          line-height: 26px;
+
+                          a{
+                              color: #212121;
+                              &:hover{
+                                // 主题颜色
+                                color: $themeColor;
+                              }
+                          }
+                      }
+                      // 描述
+                      .desc{
+                          margin-top: 10px;
+                          color: #878787;
+                          font-size: 14px;
+                          height: 44px;
+                          line-height: 22px;
+
+                      }
+                      // 更多
+                      .more{
+                          position: absolute;
+                          left: 0;
+                          right: 0;
+                          bottom: 0;
+                          font-size: 14px;
+                          color: #878787;;
+
+                          .category{
+                            float: left;
+                            color: $themeColor;
+                          }
+                          .pub-time{
+                              float: right;
+                              margin-left: 20px;
+                          }
+                          .author{
+                              float: right;
+                          }
+                      }
+                  }
+              }
+          }
+
+          // 加载更多
+          .load-more-group{
+              padding: 10px 0;
+              text-align: center;  // 使子元素（行级标签），可以进行居中
+
+            .load-more{
+                width: 402px;
+                height: 40px;
+                background: #d2dcea;
+                border: none;
+                outline: none;  // 去除边框边缘
+                cursor: pointer;
+            }
+          }
+      }
+    }
   }
+}
+
+// 内容的右栏
+.main{
+    .wrapper{
+          // 右栏
+          .sidebar-wrapper{
+              float: right;
+              width: $mainSidebarWidth;
+              height: 500px;
+              background: #fff;
+
+              .title-group{
+                  padding: 20px;
+                  overflow: hidden;
+
+                  .title{
+                      float: left;
+                      font-size: 18px;
+                      color: #212121;
+                  }
+                  .more{
+                      float: right;
+                      color: $themeColor;
+                  }
+              }
+
+              .advertise-group{
+                  img{
+                      width: 100%;
+                  }
+              }
+          }
+    }
 }
