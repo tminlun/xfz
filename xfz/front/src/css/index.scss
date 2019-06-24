@@ -332,7 +332,6 @@ header{
           .sidebar-wrapper{
               float: right;
               width: $mainSidebarWidth;
-              height: 500px;
               background: #fff;
 
               .title-group{
@@ -349,10 +348,65 @@ header{
                       color: $themeColor;
                   }
               }
-
+              // 广告图片
               .advertise-group{
                   img{
                       width: 100%;
+                  }
+              }
+
+              // 广告第三方
+              .paltform-group{
+                  // 第三方内容
+                  .focus-group{
+                      padding: 0 20px;
+                      overflow: hidden;
+
+                      // 左侧内容
+                      .left-group{
+                          width: 190px;
+                          float: left;
+
+                          li{
+                              width: 100%; // 父盒子为 190
+                              height: 50px;
+                              background: url("https://www.xfz.cn/static/build/images/side-icon.png") no-repeat;
+                              background-size: 26%;  // 背景图片大小
+                              margin-bottom: 20px;
+                              line-height: 50px;  // li的文字居中
+                              overflow: hidden;
+
+                              a{
+                                  float: left;
+                                  margin-left: 64px;
+                                  color: #878787;
+                                  font-size: 14px;
+                              }
+                          }
+                          // 背景图片的位置
+                          .zhihu{
+                              background-position: 0 0;
+                          }
+                          .weibo{
+                              background-position: 0 -63px;
+                          }
+                          .toutiao{
+                              background-position: 0 -126px;
+                          }
+                      }
+                      // 右侧内容
+                      .right-group{
+                          float: right;
+                          width: 112px;
+                          background: url("https://www.xfz.cn/static/build/images/wxQr.jpg") no-repeat;
+                          background-size: 100%;
+
+                          .desc{
+                              margin-top: 126px;
+                              color: #878787;
+                              font-size: 12px;
+                          }
+                      }
                   }
               }
           }
