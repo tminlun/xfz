@@ -20,7 +20,7 @@ header{
     z-index: 100; // 堆叠顺序在前
     //opacity: 0.5; // 半透明
 
-    // 存放头部的内容
+    // 版型
     .contain{
         width: $pageWidth;
         height: 100%; // 相对header
@@ -178,7 +178,7 @@ header{
             border-radius: 50%;
             float: left;
             margin: 0 8px;
-            // content-box: li本身宽度 + border的宽度 * 2
+            // 默认为content-box: li本身宽度 + （border的宽度 * 2）
             // border-box: border会缩放到元素本身
             box-sizing: border-box;
 
@@ -378,7 +378,7 @@ header{
 
                               a{
                                   float: left;
-                                  margin-left: 64px;
+                                  margin-left: 64px; // 文字靠右
                                   color: #878787;
                                   font-size: 14px;
                               }
@@ -409,6 +409,148 @@ header{
                       }
                   }
               }
+
+              // 热门推荐
+            .hot-news-group{
+                .hot-list-group{
+                    //每一篇新闻
+                    li{
+                        padding: 0 20px 20px;
+                        overflow: hidden;
+                        border-bottom: 1px solid $lineColor;
+
+                        // 左侧
+                        .left-group{
+                            float: left;
+                            width: 204px;
+                            height: 72px;
+                            position: relative;
+                            // 标题
+                            .title{
+                                font-size: 14px;
+                                a{
+                                    color: $mainFontColor;
+                                    &:hover{
+                                      color: $themeColor;
+                                    }
+                                }
+                            }
+
+                            .more{
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                font-size: 12px;
+
+                                .category{
+                                   float: left;
+                                   color: $themeColor;
+                                }
+                                .pub-time{
+                                    float: right;
+                                    color: $assistFontColor;
+                                }
+                            }
+                        }
+                        .right-group{
+                            float: right;
+                            width: 102px;
+                            height: 72px;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
           }
+    }
+}
+
+// 底部
+.footer{
+    font-size: 13px;
+    color: #c9c9c9;
+    // 上盒子
+    .top-group{
+        width: 100%;
+        height: 105px;
+        background-color: #555e67;
+        padding-top: 26px;
+        box-sizing: border-box; // 内边距会缩放在本身
+
+        // 居中
+        .top-inner-group{
+            width: $pageWidth;
+            margin: 0 auto;
+            overflow: hidden;
+
+            // 左侧
+            .logo-box{
+                float: left;
+                width: 168px;
+                height: 56px;
+                background: url("https://www.xfz.cn/static/build/images/logo-test.png") no-repeat;
+                background-size: 100%;
+            }
+            //右侧
+            .detail-group{
+                float: left;
+                margin-left: 84px;
+
+                // 第一行
+                .line1{
+                    overflow: hidden;
+                    // 链接
+                    .left-links{
+                        float: left;
+                        overflow: hidden;
+                        li{
+                            float: left;
+                            padding: 0 10px;
+                            border-right: 1px solid #c9c9c9;
+                            a{
+                                color: #c9c9c9;
+                            }
+                             &:first-of-type{
+                                padding-left: 0;
+                            }
+                            &:last-of-type{
+                                border-right: none;
+                            }
+                        }
+                    }
+                    // 关于我们
+                    .right-about-us{
+                        margin-left: 40px;
+                        float: left;
+                    }
+                }
+                // 第二行
+                .line2{
+                    overflow: hidden;
+                    margin-top: 20px;
+
+                    .left-address{
+                      float: left;
+                    }
+                    .right-contact{
+                        float: left;
+                        margin-left: 20px;
+                    }
+                }
+            }
+
+        }
+    }
+    //下盒子
+    .bottom-group{
+        width: 100%;
+        height: 64px;
+        background-color: #383e44;
+        text-align: center ; //水平居中（非垂直居中）
+        line-height: 64px; // 垂直居中
     }
 }
