@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>知了课堂</title>
-    <link rel="stylesheet" href="../../dist/css/index.min.css">
-    <!-- 引入图标 -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1223995_80xp5izxk6.css">
-    <script src="../../dist/js/jquery-3.3.1.min.js"></script>
-    <script src="../../dist/js/index.min.js"></script>
+    <title>新闻详情-小饭桌</title>
+    <link rel="stylesheet" href="../../dist/css/news_detail.min.css">
+
 </head>
 <body>
-   <!-- 头部 -->
+    <!-- 头部 -->
     <header class="header">
         <!-- 版型：头部子容器 -->
         <div class="contain">
@@ -32,126 +29,36 @@
             </div>
         </div>
     </header>
-   <!-- 首页内容顶级容器 -->
+
+    <!-- 首页内容顶级容器 -->
     <div class="main">
         <!-- 版型：居中 -->
         <div class="wrapper">
+
             <!-- 左栏内容 -->
             <div class="main-content-wrapper">
-                <!-- 轮播图 -->
-                <div class="banner-group" id="banner-group"><!-- 窗口（每节火车都要经过窗口） -->
-                    <!-- 装每节火车的总容器 -->
-                    <ul id="banner-ul" class="banner-ul">
-                       <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1523588994_243.jpg" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1523504442_455.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1521444982_469.jpg" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1522742329_629.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1522742329_629.png" alt="">
-                            </a>
-                        </li>
-
-                    </ul>
-                    <!-- 轮播箭头 -->
-                    <span class="arrow left-arrow">‹</span>
-                    <span class="arrow right-arrow">›</span>
-                    <!-- 轮播图圆点 -->
-                    <div class="page-control-group"><!-- 圆点盒子 -->
-                        <ul class="page-control"><!-- 圆点的版型（居中） -->
-                        </ul>
-                    </div>
-                </div>
-                <!-- 新闻 -->
-                <div class="list-outer-group">
-                    <!-- 新闻标签 -->
-                    <ul class="list-tab">
-                        <li class="active"><a href="">最新资讯</a></li>
-                        <li><a href="">热点</a></li>
-                        <li><a href="">深度</a></li>
-                        <li><a href="">干货分享</a></li>
-                        <li><a href="">投资人说</a></li>
-                    </ul>
-                    <!-- 新闻详情列表 -->
-                    <ul class="list-inner-group">
-                        <!-- li：左边（图片）和右边（新闻内容） -->
-                        <li>
-                            <!-- 左边（图片） -->
-                            <div class="thumbnail-group">
-                                <a href="">
-                                    <img src="https://static-image.xfz.cn/1560730788_369.jpg-website.news.list" alt="">
-                                </a>
-                            </div>
-                            <!-- 右边（新闻内容） -->
-                            <div class="new-group">
-                                <!-- 标题 -->
-                                <p class="title">
-                                    <a href="">早报：“树根互联”完成5亿元B轮融资;屠呦呦团队将发布科研新突破;华为为5G采购最大赢家</a>
-                                </p>
-                                <!-- 描述 -->
-                                <p class="desc">每日优鲜徐正：启动“智鲜计划”，欲三年内成长为千亿平台</p>
-                                <!-- 更多 -->
-                                <p class="more">
-                                    <!-- 类别（左浮动） -->
-                                    <span class="category">树根互联</span>
-                                    <!-- 发布时间（右浮动） -->
-                                    <span class="pub-time">13小时前</span>
-                                     <!-- 作者 -->
-                                    <span class="author">田敏伦</span>
-                                </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <!-- 左边（图片） -->
-                            <div class="thumbnail-group">
-                                <a href="">
-                                    <img src="https://static-image.xfz.cn/1560730788_369.jpg-website.news.list" alt="">
-                                </a>
-                            </div>
-                            <!-- 右边（新闻内容） -->
-                            <div class="new-group">
-                                <!-- 标题 -->
-                                <p class="title">
-                                    <a href="">早报：“树根互联”完成5亿元B轮融资;屠呦呦团队将发布科研新突破;华为为5G采购最大赢家</a>
-                                </p>
-                                <!-- 描述 -->
-                                <p class="desc">每日优鲜徐正：启动“智鲜计划”，欲三年内成长为千亿平台</p>
-                                <!-- 更多 -->
-                                <p class="more">
-                                    <!-- 类别（左浮动） -->
-                                    <span class="category">树根互联</span>
-                                    <!-- 发布时间（右浮动） -->
-                                    <span class="pub-time">13小时前</span>
-                                     <!-- 作者 -->
-                                    <span class="author">田敏伦</span>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <!-- 加载更多 -->
-                    <div class="load-more-group">
-                        <button class="load-more">查看更多</button>
+                 <!-- 新闻详情 -->
+                <div class="news-wrapper">
+                    <!-- 标题 -->
+                    <h1 class="title-group">小鹅通品牌战略升级，新教育解决方案赋能教育机构转型</h1>
+                    <!-- 标签 -->
+                    <div class="news-info-group">
+                        <!-- 左标签 -->
+                        <div class="left-info">
+                            <span class="author">饭桌君</span>
+                            <span class="pub-time">4小时前</span>
+                            <span class="category">热点</span>
+                        </div>
+                        <!-- 右标签 -->
+                        <div class="right-share">
+                            <span>分享至：</span>
+                            <a class="weixin"></a>
+                            <a class="weibo"></a>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <!-- 右栏内容（广告位） -->
             <div class="sidebar-wrapper">
                 <!-- 广告位标题 -->
@@ -224,9 +131,11 @@
                     </ul>
                 </div>
             </div>
+
         </div>
     </div>
-   <!-- 底部 -->
+
+       <!-- 底部 -->
     <footer class="footer">
         <!-- 上 -->
         <div class="top-group">
@@ -273,6 +182,5 @@
         <!-- 下 -->
         <div class="bottom-group">©2019 北京子木投资顾问有限公司 京ICP备15051289号 | 增值电信业务经营许可证：京B2-20170574</div>
     </footer>
-
 </body>
 </html>

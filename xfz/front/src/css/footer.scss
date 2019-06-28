@@ -1,0 +1,161 @@
+/* 封装底部 */
+
+@import "init.scss";
+@import "constant.scss";
+
+// 底部
+.footer{
+    font-size: 13px;
+    color: #c9c9c9;
+    padding-top: 20px;
+
+    // 上盒子
+    .top-group{
+        width: 100%;
+        height: 105px;
+        background-color: #555e67;
+        padding-top: 26px;
+        box-sizing: border-box; // 内边距会缩放在本身
+
+        // 居中
+        .top-inner-group{
+            width: $pageWidth;
+            margin: 0 auto;
+            overflow: hidden;
+
+            // 左侧
+            .logo-box{
+                float: left;
+                width: 168px;
+                height: 56px;
+                background: url("https://www.xfz.cn/static/build/images/logo-test.png") no-repeat;
+                background-size: 100%;
+            }
+            //右侧
+            .detail-group{
+                float: left;
+                margin-left: 84px;
+
+                // 第一行
+                .line1{
+                    overflow: hidden;
+                    // 链接
+                    .left-links{
+                        float: left;
+                        overflow: hidden;
+                        li{
+                            float: left;
+                            padding: 0 10px;
+                            border-right: 1px solid #c9c9c9;
+                            a{
+                                color: #c9c9c9;
+                            }
+                             &:first-of-type{
+                                padding-left: 0;
+                            }
+                            &:last-of-type{
+                                border-right: none;
+                            }
+                        }
+                    }
+                    // 关于我们
+                    .right-about-us{
+                        float: left; //和链接保持一行
+                        margin-left: 40px;
+                        overflow: hidden;
+
+                        .title{
+                            float: left;
+                        }
+                       //二维码父盒子
+                        .social-group{
+                            float: left;
+                            overflow: hidden;
+                            cursor: pointer;
+
+                            li{
+                                margin-left: 10px;
+                                float: left;
+                                color: #fff;
+
+                                // 二维码文字公共样式
+                                .text{
+                                    padding-left: 34px;
+                                }
+                                a{
+                                    color: #fff;
+                                }
+                            }
+                            //二维码
+                            .weixin{
+                                background-image: url("https://www.xfz.cn/static/build/images/wx-icon.png");
+                                background-repeat: no-repeat;
+                                background-size: 30%; //100%度适应整个盒子的宽度
+                                height: 24px;
+
+                                // 鼠标移进，显示（移出自动隐藏）
+                                &:hover .wxQr{
+                                    // 省去js的hover事件
+                                    display: block;
+                                }
+                                .wxQr{
+                                    background: url("https://www.xfz.cn/static/build/images/xfz-wechat-share.png") no-repeat;
+                                    background-size: 100% 100%;
+                                    width: 200px;
+                                    height: 200px;
+                                    position: fixed;  // 定位
+                                    bottom: 140px;  // 向上移动
+                                    display: none;
+                                }
+                            }
+                            .weibo{
+                                background-image: url("https://www.xfz.cn/static/build/images/xl-icon.png");
+                                background-repeat: no-repeat;
+                                background-size: 30%; //100%度适应整个盒子的宽度
+                                height: 24px;
+
+                                &:hover .wbQr{
+                                    display: block;
+                                }
+
+                                .wbQr{
+                                    width: 200px;
+                                    height: 200px;
+                                    background: url("https://www.xfz.cn/static/build/images/xfz-school-wechat-share.png") no-repeat;
+                                    background-size: 100%;
+                                    position: fixed;
+                                    bottom: 140px;
+                                    display: none;
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+                // 第二行
+                .line2{
+                    overflow: hidden;
+                    margin-top: 20px;
+
+                    .left-address{
+                      float: left;
+                    }
+                    .right-contact{
+                        float: left;
+                        margin-left: 20px;
+                    }
+                }
+            }
+
+        }
+    }
+    //下盒子
+    .bottom-group{
+        width: 100%;
+        height: 64px;
+        background-color: #383e44;
+        text-align: center ; //水平居中（非垂直居中）
+        line-height: 64px; // 垂直居中
+    }
+}

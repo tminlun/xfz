@@ -1,556 +1,227 @@
 @import "init.scss";
 @import "constant.scss";
-
-$navHeight: 64px; //定义变量
-
+@import "header.scss";
+@import "body.scss";
+@import "footer.scss";
 
 body{
-    background-color: #f2f2f2;
-}
+    .main{
+        .wrapper{
+            .main-content-wrapper{
 
-//头部
-header{
-    width: 100%;
-    height: $navHeight;
-    background: #3a3a3a;
-    position: fixed;// 固定定位。但会覆盖下面的盒子，解决只需在下面盒子设置margin-top
-    left: 0;
-    top: 0;
-    right: 0;
-    z-index: 100; // 堆叠顺序在前
-    //opacity: 0.5; // 半透明
+                // 轮播图
+                .banner-group{ // 窗口
+                  // 对全局变量进行改名
+                  $bannerWidth : $mainBoxWidth;
+                  $bannerHeight: 202px;
 
-    // 版型
-    .contain{
-        width: $pageWidth;
-        height: 100%; // 相对header
-        margin: 0 auto;
-        overflow: hidden;
-        // logo
-        .logo-box{
-            width: 140px;
-            height: 48px;
-            background: url("https://www.xfz.cn/static/build/images/logo.png");
-            margin-top: 8px;
-            float: left;  // 需要左浮动才能让导航条向左浮动
-            // 可以点击a标签
-            a{
-                display: block;
-                width: 100%;
-                height: 100%;
-            }
-        }
+                  width: 100%;
+                  height: $bannerHeight;
+                  background: #5c87d9;
+                  position: relative;
+                  overflow: hidden; //隐藏溢出的子盒子
+                  z-index: 0; // 堆叠顺序在后
 
-        //导航条
-        .nav{
-            margin-left: 120px;
-            float: left;
-            // 导航条文字
-            li{
-                list-style: none;
-                float: left; //文字水平
-                margin-right: 41px;
-                // 进行居中
-                line-height: $navHeight;
-                height: $navHeight;
-                // 任何border都得在本盒子（li）里显示
-                box-sizing: border-box;
-                a{
-                    color: #fff;
-                }
-                // 标签里添加class需要加&（选中样式）
-                &.active{
-                    border-bottom: 5px solid #5c87d9;
-                }
-            }
-        }
-
-        // 登录注册，按钮
-        .auth-box{
-            float: right;
-            line-height: $navHeight;
-            color: #fff;
-
-            // 图标
-            .iconfont{
-                color: #fff;
-                font-size: 20px; //i标签大小可以用font-size调节
-            }
-            // 登录、注册文字
-            a{
-                color: #fff;
-            }
-        }
-    }
-}
-
-// 内容
-// 左右栏和轮播图
-.main{
-  width: 100%;
-  margin-top: $navHeight + 20px; // 不被导航条覆盖
-
-  // 版型
-  .wrapper{
-    width: $pageWidth;
-    margin: 0 auto;
-    overflow: hidden; // 子盒子有浮动必须清除浮动：获取子盒子的元素：（高度、宽度）
-  }
-  //左栏
-  .news-wrapper{
-    float: left;
-    width: $mainBoxWidth;
-
-    // 轮播图
-    // 窗口
-    .banner-group{
-      // 对全局变量进行改名
-      $bannerWidth : $mainBoxWidth;
-      $bannerHeight: 202px;
-
-      width: 100%;
-      height: $bannerHeight;
-      background: #5c87d9;
-      position: relative;
-      overflow: hidden; //隐藏溢出的子盒子
-      z-index: 0; // 堆叠顺序在后
-
-      // 火车总容器：ul
-      .banner-ul{
-        overflow: hidden; // 获取每节火车的元素
-        width: $bannerWidth*4;  //火车总容器宽度
-        // 总火车节的左边距为0，以便进行轮播
-        position: absolute;
-        left: 0;
-        // 每个火车节
-        li{
-          float: left;
-          width: $bannerWidth;
-          height: $bannerHeight;
-            img{
-              width: $bannerWidth;
-              height: $bannerHeight;
-            }
-        }
-      }
-
-
-      // 轮播图的箭头
-      // 箭头的公共样式
-      .arrow{
-        font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-        font-size: 70px;
-        color: #fff;
-          position: absolute; // 相对于窗口定位，它会漂浮起来，所以避免了ul覆盖。
-        top: 50%;
-        margin-top: -45px;
-        cursor: pointer; //鼠标光环形状
-        display: none;  //默认不显示箭头
-      }
-      // 左箭头的独有样式
-      .left-arrow{
-        left: 20px;
-      }
-       // 右箭头的独有样式
-      .right-arrow{
-        right: 20px; //无需定义left...那么长，此代表了右边距只有20px
-      }
-
-
-      //轮播圆点
-      .page-control-group{
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 20px;
-        ul.page-control{
-          margin: 0 auto; //如不添加宽度，此样式无效
-          // 设置宽度，margin: 0 auto;才有效
-          // 4个盒子本身宽度 + 左右边距宽度
-          width: 4 * 10px + 2 * 8px + 3 * 16px;
-          overflow: hidden; //获取li的css属性
-          cursor: pointer; //鼠标样式
-
-          li{
-            width: 10px;
-            height: 10px;
-            border: 1px solid #fff;
-            border-radius: 50%;
-            float: left;
-            margin: 0 8px;
-            // 默认为content-box: li本身宽度 + （border的宽度 * 2）
-            // border-box: border会缩放到元素本身
-            box-sizing: border-box;
-
-            // 在父元素（li）中添加个选择器
-            &.active{
-              background: #fff;
-            }
-          }
-        }
-      }
-
-    }
-  }
-
-}
-
-// 新闻列表
-.main{
-  .wrapper{
-    .news-wrapper{
-      // 新闻
-      .list-outer-group{
-          background: #fff;
-          margin-top: 20px;
-
-          // 新闻分类
-          .list-tab{
-            width: 100%;
-            height: 66px;
-            border: 1px solid #eee;
-            border-left: none;
-            border-right: none;
-            overflow: hidden;
-
-            li{
-              float: left;
-              padding: 0 10px;
-              margin-top: 20px;
-
-                // 必须在a标签，才能设置字体颜色
-                a{
-                  color: #878787;
-                }
-                // 第一个li标签
-                &:first-of-type{
-                  border-left: 5px solid $themeColor;
-                }
-                // 相对于li的class属性的a标签
-                &.active a{
-                    color: #212121;
-                }
-            }
-          }
-
-          // 新闻详情列表
-          .list-inner-group{
-
-            // 左边（图片）和右边（新闻内容）
-              li{
-                  padding: 20px;
-                  overflow: hidden;
-                  border-bottom: 1px solid #eee;
-
-                  // 左边（图片）
-                  .thumbnail-group{
-                    float: left;
-                    width: 226px;
-                    height: 161px;
-                    a img{
-                      width: 100%;
-                      height: 100%;
+                  // 火车总容器：ul
+                  .banner-ul{
+                    overflow: hidden; // 获取每节火车的元素
+                    width: $bannerWidth*4;  //火车总容器宽度
+                    // 总火车节的左边距为0，以便进行轮播
+                    position: absolute;
+                    left: 0;
+                    // 每个火车节
+                    li{
+                      float: left;
+                      width: $bannerWidth;
+                      height: $bannerHeight;
+                        img{
+                          width: $bannerWidth;
+                          height: $bannerHeight;
+                        }
                     }
                   }
-                  // 右边（新闻内容）
-                  .new-group{
-                      float: right;
-                      width: 500px;
-                      height: 161px;
-                      position: relative;
 
-                      // 标题
-                      .title{
-                          font-size: 20px;
-                          line-height: 26px;
 
-                          a{
-                              color: #212121;
-                              &:hover{
-                                // 主题颜色
-                                color: $themeColor;
-                              }
-                          }
-                      }
-                      // 描述
-                      .desc{
-                          margin-top: 10px;
-                          color: #878787;
-                          font-size: 14px;
-                          height: 44px;
-                          line-height: 22px;
+        // 轮播图的箭头
+        // 箭头的公共样式
+        .arrow{
+          font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+          font-size: 70px;
+          color: #fff;
+            position: absolute; // 相对于窗口定位，它会漂浮起来，所以避免了ul覆盖。
+          top: 50%;
+          margin-top: -45px;
+          cursor: pointer; //鼠标光环形状
+          display: none;  //默认不显示箭头
+        }
+        // 左箭头的独有样式
+        .left-arrow{
+          left: 20px;
+        }
+         // 右箭头的独有样式
+        .right-arrow{
+          right: 20px; //无需定义left...那么长，此代表了右边距只有20px
+        }
 
-                      }
-                      // 更多
-                      .more{
-                          position: absolute;
-                          left: 0;
-                          right: 0;
-                          bottom: 0;
-                          font-size: 14px;
-                          color: #878787;;
 
-                          .category{
-                            float: left;
-                            color: $themeColor;
-                          }
-                          .pub-time{
-                              float: right;
-                              margin-left: 20px;
-                          }
-                          .author{
-                              float: right;
-                          }
-                      }
-                  }
+        //轮播圆点
+        .page-control-group{
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 20px;
+          ul.page-control{
+            margin: 0 auto; //如不添加宽度，此样式无效
+            // 设置宽度，margin: 0 auto;才有效
+            // 4个盒子本身宽度 + 左右边距宽度
+            width: 4 * 10px + 2 * 8px + 3 * 16px;
+            overflow: hidden; //获取li的css属性
+            cursor: pointer; //鼠标样式
+
+            li{
+              width: 10px;
+              height: 10px;
+              border: 1px solid #fff;
+              border-radius: 50%;
+              float: left;
+              margin: 0 8px;
+              // 默认为content-box: li本身宽度 + （border的宽度 * 2）
+              // border-box: border会缩放到元素本身
+              box-sizing: border-box;
+
+              // 在父元素（li）中添加个选择器
+              &.active{
+                background: #fff;
               }
-          }
-
-          // 加载更多
-          .load-more-group{
-              padding: 10px 0;
-              text-align: center;  // 使子元素（行级标签），可以进行居中
-
-            .load-more{
-                width: 402px;
-                height: 40px;
-                background: #d2dcea;
-                border: none;
-                outline: none;  // 去除边框边缘
-                cursor: pointer;
             }
           }
+        }
+
       }
-    }
-  }
-}
+                // 新闻列表
+                .list-outer-group{
+                    background: #fff;
+                    margin-top: 20px;
 
-// 内容的右栏
-.main{
-    .wrapper{
-          // 右栏
-          .sidebar-wrapper{
-              float: right;
-              width: $mainSidebarWidth;
-              background: #fff;
-
-              .title-group{
-                  padding: 20px;
-                  overflow: hidden;
-
-                  .title{
-                      float: left;
-                      font-size: 18px;
-                      color: #212121;
-                  }
-                  .more{
-                      float: right;
-                      color: $themeColor;
-                  }
-              }
-              // 广告图片
-              .advertise-group{
-                  img{
+                    // 新闻分类
+                    .list-tab{
                       width: 100%;
-                  }
-              }
-
-              // 广告第三方
-              .paltform-group{
-                  // 第三方内容
-                  .focus-group{
-                      padding: 0 20px;
+                      height: 66px;
+                      border: 1px solid #eee;
+                      border-left: none;
+                      border-right: none;
                       overflow: hidden;
 
-                      // 左侧内容
-                      .left-group{
-                          width: 190px;
-                          float: left;
+                      li{
+                        float: left;
+                        padding: 0 10px;
+                        margin-top: 20px;
 
-                          li{
-                              width: 100%; // 父盒子为 190
-                              height: 50px;
-                              background: url("https://www.xfz.cn/static/build/images/side-icon.png") no-repeat;
-                              background-size: 26%;  // 背景图片大小
-                              margin-bottom: 20px;
-                              line-height: 50px;  // li的文字居中
-                              overflow: hidden;
+                          // 必须在a标签，才能设置字体颜色
+                          a{
+                            color: #878787;
+                          }
+                          // 第一个li标签
+                          &:first-of-type{
+                            border-left: 5px solid $themeColor;
+                          }
+                          // 相对于li的class属性的a标签
+                          &.active a{
+                              color: #212121;
+                          }
+                      }
+                    }
 
-                              a{
-                                  float: left;
-                                  margin-left: 64px; // 文字靠右
-                                  color: #878787;
-                                  font-size: 14px;
+                    // 新闻详情列表
+                    .list-inner-group{
+
+                      // 左边（图片）和右边（新闻内容）
+                        li{
+                            padding: 20px;
+                            overflow: hidden;
+                            border-bottom: 1px solid #eee;
+
+                            // 左边（图片）
+                            .thumbnail-group{
+                              float: left;
+                              width: 226px;
+                              height: 161px;
+                              a img{
+                                width: 100%;
+                                height: 100%;
                               }
-                          }
-                          // 背景图片的位置
-                          .zhihu{
-                              background-position: 0 0;
-                          }
-                          .weibo{
-                              background-position: 0 -63px;
-                          }
-                          .toutiao{
-                              background-position: 0 -126px;
-                          }
-                      }
-                      // 右侧内容
-                      .right-group{
-                          float: right;
-                          width: 112px;
-                          background: url("https://www.xfz.cn/static/build/images/wxQr.jpg") no-repeat;
-                          background-size: 100%;
+                            }
+                            // 右边（新闻内容）
+                            .new-group{
+                                float: right;
+                                width: 500px;
+                                height: 161px;
+                                position: relative;
 
-                          .desc{
-                              margin-top: 126px;
-                              color: #878787;
-                              font-size: 12px;
-                          }
-                      }
-                  }
-              }
+                                // 标题
+                                .title{
+                                    font-size: 20px;
+                                    line-height: 26px;
 
-              // 热门推荐
-            .hot-news-group{
-                .hot-list-group{
-                    //每一篇新闻
-                    li{
-                        padding: 0 20px 20px;
-                        overflow: hidden;
-                        border-bottom: 1px solid $lineColor;
+                                    a{
+                                        color: #212121;
+                                        &:hover{
+                                          // 主题颜色
+                                          color: $themeColor;
+                                        }
+                                    }
+                                }
+                                // 描述
+                                .desc{
+                                    margin-top: 10px;
+                                    color: #878787;
+                                    font-size: 14px;
+                                    height: 44px;
+                                    line-height: 22px;
 
-                        // 左侧
-                        .left-group{
-                            float: left;
-                            width: 204px;
-                            height: 72px;
-                            position: relative;
-                            // 标题
-                            .title{
-                                font-size: 14px;
-                                a{
-                                    color: $mainFontColor;
-                                    &:hover{
+                                }
+                                // 更多
+                                .more{
+                                    position: absolute;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    font-size: 14px;
+                                    color: #878787;;
+
+                                    .category{
+                                      float: left;
                                       color: $themeColor;
+                                    }
+                                    .pub-time{
+                                        float: right;
+                                        margin-left: 20px;
+                                    }
+                                    .author{
+                                        float: right;
                                     }
                                 }
                             }
-
-                            .more{
-                                position: absolute;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                font-size: 12px;
-
-                                .category{
-                                   float: left;
-                                   color: $themeColor;
-                                }
-                                .pub-time{
-                                    float: right;
-                                    color: $assistFontColor;
-                                }
-                            }
-                        }
-                        .right-group{
-                            float: right;
-                            width: 102px;
-                            height: 72px;
-                            img{
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
-                }
-            }
-          }
-    }
-}
 
-// 底部
-.footer{
-    font-size: 13px;
-    color: #c9c9c9;
-    // 上盒子
-    .top-group{
-        width: 100%;
-        height: 105px;
-        background-color: #555e67;
-        padding-top: 26px;
-        box-sizing: border-box; // 内边距会缩放在本身
+                    // 加载更多
+                    .load-more-group{
+                        padding: 10px 0;
+                        text-align: center;  // 使子元素（行级标签），可以进行居中
 
-        // 居中
-        .top-inner-group{
-            width: $pageWidth;
-            margin: 0 auto;
-            overflow: hidden;
-
-            // 左侧
-            .logo-box{
-                float: left;
-                width: 168px;
-                height: 56px;
-                background: url("https://www.xfz.cn/static/build/images/logo-test.png") no-repeat;
-                background-size: 100%;
-            }
-            //右侧
-            .detail-group{
-                float: left;
-                margin-left: 84px;
-
-                // 第一行
-                .line1{
-                    overflow: hidden;
-                    // 链接
-                    .left-links{
-                        float: left;
-                        overflow: hidden;
-                        li{
-                            float: left;
-                            padding: 0 10px;
-                            border-right: 1px solid #c9c9c9;
-                            a{
-                                color: #c9c9c9;
-                            }
-                             &:first-of-type{
-                                padding-left: 0;
-                            }
-                            &:last-of-type{
-                                border-right: none;
-                            }
-                        }
-                    }
-                    // 关于我们
-                    .right-about-us{
-                        margin-left: 40px;
-                        float: left;
+                      .load-more{
+                          width: 402px;
+                          height: 40px;
+                          background: #d2dcea;
+                          border: none;
+                          outline: none;  // 去除边框边缘
+                          cursor: pointer;
+                      }
                     }
                 }
-                // 第二行
-                .line2{
-                    overflow: hidden;
-                    margin-top: 20px;
-
-                    .left-address{
-                      float: left;
-                    }
-                    .right-contact{
-                        float: left;
-                        margin-left: 20px;
-                    }
-                }
-            }
-
+              }
         }
     }
-    //下盒子
-    .bottom-group{
-        width: 100%;
-        height: 64px;
-        background-color: #383e44;
-        text-align: center ; //水平居中（非垂直居中）
-        line-height: 64px; // 垂直居中
-    }
 }
+
