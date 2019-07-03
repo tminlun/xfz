@@ -1,5 +1,6 @@
 @import "init.scss";
 @import "constant.scss";
+
 @import "header.scss";
 @import "body.scss";
 @import "footer.scss";
@@ -8,9 +9,141 @@ body{
     .main{
       // 左侧
       .main-content-wrapper{
-            // 左侧下面的新闻详情
+            background: #fff;
+            padding: 20px;
+            //让padding在盒子内部缩小，而不是外部扩张
+            box-sizing: border-box;
+
+            // 新闻详情
             .news-wrapper{
-                padding: 20px;
+                padding-bottom: 20px;
+
+                // 新闻详情的标题
+                .title-group{
+                    color: $mainFontColor;
+                    font-weight: 400;
+                    font-size: 24px;
+                }
+
+                // 新闻详情标签
+                .news-info-group{
+                    $news-info-height: 28px;
+
+                    overflow: hidden;
+                    margin-top: 10px;
+                    color: $assistFontColor;
+                    font-size: 14px;
+                    // 父容器中图片要文字和居中，在父容器加行高
+                    line-height: $news-info-height;
+                    height: $news-info-height;
+
+                    // 左标签
+                    .left-info{
+                      float: left;
+
+                        .pub-time{
+                            margin-left: 20px;
+                        }
+                        .category{
+                            margin-left: 20px;
+                            background: $themeColor;
+                            color: #fff;
+                            padding: 0 5px;
+                            border-radius: 5px;
+                        }
+                    }
+                    // 右标签
+                    .right-share{
+                        float: right;
+                        overflow: hidden;
+
+                        //三个标签为一行
+                        span{
+                            float: left;
+                        }
+
+                        //微信和微博公共的样式
+                        .shape-public{
+                            float: left;
+                            background-image: url("https://www.xfz.cn/static/build/images/share.png");
+                            width: 28px;
+                            height: 28px;
+                            background-size: 240%;
+                        }
+                        .weixin{
+                        }
+                        .weibo{
+                            background-position: -39px 0;
+                            margin-left: 10px;
+                        }
+
+                    }
+                }
+
+                //新闻详情内容，article：定义外部的富文本框内容
+                .article{
+                    margin-top: 20px;
+
+                    // 图片最大宽度不能超过左侧新闻详情宽度
+                    img{
+                        max-width: 100%;
+                    }
+                }
+
+            }
+
+            //评论区域
+            .comment-wrapper{
+                border-top: 1px solid $lineColor;
+                padding-top: 20px;
+
+                .title{
+                    color: $mainFontColor;
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                // 输入框
+                .comment-textarea{
+                    margin-top: 10px;
+                    width: 100%;
+                    // 禁止拉伸
+                    resize: none;
+                    //禁止蓝色框
+                    outline: none;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    padding: 6px 8px;
+                    box-sizing: border-box;
+                }
+                // 未登陆样式
+                .nologin-textarea{
+                    height: 40px;
+                    // 因为有padding，所以行高 == 40px - （(padding-top + padding-bottom) + (border-top + border-bottom)）
+                    line-height: 26px;
+                }
+                //已登陆样式
+                .login-textarea{
+                    height: 80px;
+                }
+
+                // 按钮
+                .submit-btn-group{
+                    margin-top: 10px;
+                    text-align: right;  // 把（文本、按钮）排列到右边
+                    font-size: 14px;
+
+                    .submit-btn{
+                        border: none;
+                        border-radius: 5px;
+                        padding: 10px 20px;
+                        background: $themeColor;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+
+                }
+
             }
         }
     }
