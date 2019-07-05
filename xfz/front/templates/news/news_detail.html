@@ -69,17 +69,43 @@
                 <!-- 评论区域 -->
                 <div class="comment-wrapper">
                     <h3 class="title">评论人数（0）</h3>
-                    <!-- 评论框：readonly-禁止输入  -->
-                    <!-- 未登录状态  -->
+
+                    <!-- 评论框start -->
+                    <!-- 未登录状态 ：readonly-禁止输入  -->
 <!--                 <textarea name="comment" class="comment-textarea nologin-textarea" placeholder="立即登录，参与评论" readonly></textarea>-->
                     <!-- 登陆状态  -->
                     <textarea name="comment" class="comment-textarea login-textarea" placeholder="立即登录，参与评论"></textarea>
+                    <!-- 评论框end -->
+
                     <!-- 提交按钮 -->
                     <div class="submit-btn-group">
                         <button class="submit-btn">提交</button>
                     </div>
-                </div>
+                    <!-- 评论列表 -->
+                    <ul class="comment-list">
+                        <li>
+                            <!-- 作者、时间 -->
+                            <div class="top-comment-info">
+                                <img src="https://static.hdslb.com/images/member/noface.gif" alt="" class="avatar">
+                                <span class="author">小知了</span>
+                                <span class="pub-time">1小时前</span>
+                            </div>
+                            <!-- 内容 -->
+                            <p class="bottom-comment-content">评论内容</p>
+                        </li>
+                        <li>
+                            <!-- 作者、时间 -->
+                            <div class="top-comment-info">
+                                <img src="https://static.hdslb.com/images/member/noface.gif" alt="" class="avatar">
+                                <span class="author">小知了</span>
+                                <span class="pub-time">1小时前</span>
+                            </div>
+                            <!-- 内容 -->
+                            <p class="bottom-comment-content">评论内容</p>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
 
             <!-- 右栏内容（广告位） -->

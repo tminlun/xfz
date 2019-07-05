@@ -144,6 +144,45 @@ body{
 
                 }
 
+                // 评论列表
+                .comment-list{
+                    margin-top: 20px;
+                    li{
+                        border-bottom: 1px solid $lineColor;
+                        padding-bottom: 20px;
+                        margin-bottom: 20px;
+
+                        //作者、时间
+                        .top-comment-info{
+                            overflow: hidden;
+                            // 以图片的高为基础
+                            height: 40px;
+                            line-height: 40px;
+                            color: $assistFontColor;
+                            font-size: 16px;
+                            
+                            .avatar{
+                                float: left;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                            }
+                            .author{
+                                float: left;
+                                margin-left: 20px;
+                            }
+                            .pub-time{
+                                float: right;
+                            }
+                        }
+                        // 内容
+                        .bottom-comment-content{
+                            margin-left: 60px;
+                            margin-top: 10px;
+                        }
+
+                    }
+                }
             }
         }
     }

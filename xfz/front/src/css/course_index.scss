@@ -1,0 +1,135 @@
+@import "init.scss";
+@import "constant.scss";
+
+@import "header.scss";
+@import "body.scss";
+@import "footer.scss";
+
+
+.main{
+    margin-top: 64px;  // 课堂首页导航条无外边距
+
+    // 课程首页导航栏
+    .course-nav{
+        $courseNavHeight: 54px;
+        width: 100%;
+        height: $courseNavHeight;
+        background: #fff;
+        // 阴影效果 box-shadow：水平长度（横：像录音条），模糊长度（竖），rgba：透明
+        box-shadow: 0 4px 5px rgba(0,0,0,0.1%);
+
+        // 版型
+        .nav-container{
+            width: $pageWidth;
+            margin: 0 auto;
+            height: $courseNavHeight;
+            line-height: $courseNavHeight; // 子孙节点都垂直居中
+
+            // logo
+            h3.title{
+                float: left; // 父盒子如果有高度，则不用overflow: hidden;
+                font-size: 24px;
+                color: #696969;
+            }
+            // 导航条
+            .nav-list{
+                float: left;
+                margin-left: 100px;
+
+                li{
+                    float: left;
+                    margin-right: 40px;
+
+                    // 设置字体颜色在a标签
+                    a{
+                        color: #888;
+                    }
+                    // 选中状态，&--父标签其添加属性
+                    &.active{
+                        // 字体在a标签中，不能再li修改字体
+                        a{
+                            color: $mainFontColor;
+                        }
+                    }
+
+                }
+            }
+
+      }
+    }
+
+    // 课程列表（版型中的内容）
+    .wrapper{
+        .course-list{
+            margin-top: 20px;
+            // 弹性布局
+            display: flex;
+            flex-direction: row;// 横向排列
+            flex-wrap: wrap; //打断到多行中（nowrap：不换行，挤在一行）
+            justify-content: space-between;  //两端对齐，项目之间有间隔，并相等
+
+
+            li{
+                $courseItemHeight: 280px;
+                $courseThumbnailHeight: 158px;
+                width: 278px;
+                height: $courseItemHeight;
+                background: #fff;
+                margin-bottom: 20px;
+                // 鼠标移进，出现悬浮效果
+                &:hover{
+                    box-shadow: 0 3px 14px rgba(0,0,0,0.1%);
+                }
+
+                //缩略图
+                .top-thumbnail-group{
+                    width: 100%;  //相对于li
+                    height: $courseThumbnailHeight;
+                    // div中有img，最好设置img宽高
+                    .thumbnail{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                //课程信息
+                .bottom-info{
+                    padding: 16px;
+                    box-sizing: border-box; // 盒子内部操作
+                    width: 100%;
+                    height: $courseItemHeight - $courseThumbnailHeight;
+                    position: relative;
+
+                    .title{
+                        color: $mainFontColor;  // 包裹在a标签中
+                    }
+                    .author{
+                        margin-top: 10px;
+                        color: $assistFontColor; //辅助颜色
+                        font-size: 14px;
+                    }
+                    // 价格
+                    .price-group{
+                        position: absolute;
+                        left: 16px;
+                        right: 16px;
+                        bottom: 16px;
+                        //子孙有“文本标签”，在其使用文本对齐（非子孙使用）
+                        text-align: right;
+
+
+                        //免费
+                        .free{
+                            color: rgb(126,211,33);
+                        }
+                        //收费
+                        .charge{
+                            color: #f44b4b;;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
