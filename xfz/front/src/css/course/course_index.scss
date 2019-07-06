@@ -1,9 +1,10 @@
-@import "init.scss";
-@import "constant.scss";
+@import "../common/init";
+@import "../common/constant";
 
-@import "header.scss";
-@import "body.scss";
-@import "footer.scss";
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
+@import "./course_nav";  // 导航条
 
 
 .main{
@@ -120,11 +121,11 @@
 
                         //免费
                         .free{
-                            color: rgb(126,211,33);
+                            color: $freeColor;
                         }
                         //收费
-                        .charge{
-                            color: #f44b4b;;
+                        .pay{
+                            color: $payColor;
                         }
                     }
 

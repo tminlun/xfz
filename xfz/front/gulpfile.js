@@ -16,7 +16,7 @@ var sourcemaps = require("gulp-sourcemaps");
 // 动态定义路径
 var path = {
     'html': './templates/**/',  // **：全部文件
-    'css': './src/css/',
+    'css': './src/css/**/',
     'js': './src/js/',
     'images': './src/images/',
     'css_dist': './dist/css/',

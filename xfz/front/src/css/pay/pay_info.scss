@@ -1,0 +1,86 @@
+@import "../common/init";
+@import "../common/constant";
+
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
+
+.main{
+    .wrapper{
+        .venture-banner{
+            width: 100%;
+            height: 202px;
+            background: #5c87d9;
+            z-index: 0;
+
+            .venture-banner-img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        // 企业书
+        .venture-book{
+            width: 794px;
+            background: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:space-between;
+
+              li{
+                  height: 150px;
+                  width: 370px;
+                  border: 1px solid #ccc;
+                  overflow: hidden;
+                  cursor: pointer;
+                  margin-bottom: 15px;
+                  &:hover{
+                    box-shadow: 3px 4px 5px rgba(0,0,0,0.1%);
+                  }
+
+
+                  .left-venture{
+                      float: left;
+                      width: 100px;
+                      height: 150px;
+                      .venture-img{
+                          width: 100%;
+                          height: 100%;
+                      }
+                  }
+                  .right-venture{
+                      float: right;
+                      height: 100%;
+                      width: 270px;
+                      padding: 10px;
+                      box-sizing: border-box;
+                      position: relative;
+                      .text-overflow{
+                         //不换行,不溢出,多余显示省略符号
+                         // white-space: nowrap;
+                          text-overflow: ellipsis;
+                          overflow: hidden;
+                      }
+                      .venture-title{
+                          font-size: 18px;
+                          color: #212121;
+                      }
+                      .venture-desc{
+                          margin-top: 12px;
+                          color: #878787;
+                          font-size: 13px;
+                      }
+                      .price{
+                          position: absolute;
+                          right: 10px;
+                          bottom: 10px;
+                          color: #f73e3e;
+                          font-size: 20px;
+                      }
+                  }
+              }
+        }
+    }
+}

@@ -1,9 +1,9 @@
-@import "init.scss";
-@import "constant.scss";
+@import "../common/init";
+@import "../common/constant";
 
-@import "header.scss";
-@import "body.scss";
-@import "footer.scss";
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
 
 body{
     .main{

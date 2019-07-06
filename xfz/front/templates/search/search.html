@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>知了课堂</title>
-    <link rel="stylesheet" href="../../dist/css/news/index.min.css">
+    <link rel="stylesheet" href="../../dist/css/search/search.min.css">
     <!-- 引入图标 -->
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1223995_80xp5izxk6.css">
     <script src="../../dist/js/jquery-3.3.1.min.js"></script>
@@ -32,62 +32,28 @@
             </div>
         </div>
     </header>
+
    <!-- 首页内容顶级容器 -->
     <div class="main">
         <!-- 版型：居中 -->
         <div class="wrapper">
             <!-- 左栏内容 -->
             <div class="main-content-wrapper">
-                <!-- 轮播图 -->
-                <div class="banner-group" id="banner-group"><!-- 窗口（每节火车都要经过窗口） -->
-                    <!-- 装每节火车的总容器 -->
-                    <ul id="banner-ul" class="banner-ul">
-                       <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1523588994_243.jpg" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1523504442_455.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1521444982_469.jpg" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1522742329_629.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1522742329_629.png" alt="">
-                            </a>
-                        </li>
 
-                    </ul>
-                    <!-- 轮播箭头 -->
-                    <span class="arrow left-arrow">‹</span>
-                    <span class="arrow right-arrow">›</span>
-                    <!-- 轮播图圆点 -->
-                    <div class="page-control-group"><!-- 圆点盒子 -->
-                        <ul class="page-control"><!-- 圆点的版型（居中） -->
-                        </ul>
-                    </div>
+                <!-- 搜索框 -->
+                <div class="search-area">
+                    <input class="search-ptn" type="text" placeholder="可输入新闻关键词、作者名字搜索">
+                    <div class="search-btn">搜索</div>
                 </div>
+
                 <!-- 新闻 -->
                 <div class="list-outer-group">
+
                     <!-- 新闻标签 -->
-                    <ul class="list-tab">
-                        <li class="active"><a href="">最新资讯</a></li>
-                        <li><a href="">热点</a></li>
-                        <li><a href="">深度</a></li>
-                        <li><a href="">干货分享</a></li>
-                        <li><a href="">投资人说</a></li>
-                    </ul>
+                    <div class="list-tab">
+                        <span>热门推荐</span>
+                    </div>
+
                     <!-- 新闻详情列表 -->
                     <ul class="list-inner-group">
                         <!-- li：左边（图片）和右边（新闻内容） -->
@@ -145,13 +111,10 @@
                             </div>
                         </li>
                     </ul>
-
-                    <!-- 加载更多 -->
-                    <div class="load-more-group">
-                        <button class="load-more">查看更多</button>
-                    </div>
                 </div>
             </div>
+
+
             <!-- 右栏内容（广告位） -->
             <div class="sidebar-wrapper">
                 <!-- 广告位标题 -->

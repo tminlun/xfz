@@ -1,0 +1,209 @@
+@import "../common/init";
+@import "../common/constant";
+
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
+@import "course_nav";  // 导航条
+
+
+.main{
+    .wrapper{
+        margin-top: 20px;
+        width: 1070px; // 总宽度
+
+        // 课程视频
+        .course-wrapper{
+            background: #fff;
+            // 视频介绍
+            .top-course-info{
+                padding: 20px;
+
+                .course-title{
+                    font-size: 20px;
+                    color: $mainFontColor;
+                }
+
+                .price-group{
+                    margin-top: 20px;
+                    overflow: hidden;
+                    line-height: 40px;
+                    height: 40px;
+                    // 分享
+                    .left-share-group{
+                        float: left;
+                        overflow: hidden;
+
+                        .title{
+                            color: $assistFontColor;
+                            font-size: 14px;
+                            float: left;
+                        }
+                        .shape-public{
+                            background: url("https://www.xfz.cn/static/build/images/share.png") no-repeat;
+                            background-size: 240%;
+                            width: 28px;
+                            height: 28px;
+                            display: inline-block;
+                            float: left;
+
+                        }
+                        .weixin{
+
+                        }
+                        .weibo{
+                            background-position: -39px 0;
+                            margin-left: 5px;
+                        }
+                    }
+                    // 购买按钮
+                    .right-buy-group{
+                        float: right;
+                        .price{
+                            font-size: 16px;
+                        }
+                        // 免费颜色
+                        .free{
+                            color: $freeColor;
+                        }
+                        // 收费颜色
+                        .pay{
+                            color: $payColor;
+                        }
+                        // 按钮
+                        .buy-btn{
+                            color: #fff;
+                            background: #ff8d3f;
+                            // 父标签使用了overflow，所以padded无用
+                            display: inline-block;
+                            width: 120px;
+                            height: 40px;
+                            text-align: center;
+                            line-height: 40px;
+                            border-radius: 5px;
+
+                        }
+
+                    }
+
+                }
+            }
+            // 视频播放器
+            .bottom-video-group{
+                width: 100%;
+                height: 600px;
+                background: pink;
+            }
+        }
+
+        // 课程介绍
+        .bottom-wrapper{
+            margin-top: 20px;
+            overflow: hidden;
+
+            // 左侧：介绍
+            .left-detail-wrapper{
+                float: left;
+                width: 700px; //左侧宽度
+                // 介绍
+                .item-group{
+                    background: #fff;
+                    padding: 20px;
+                    margin-bottom: 20px;
+
+                    .item-title{
+                        font-size: 18px;
+                        color: #202020;
+                        border-left: 5px solid $themeColor;
+                        padding-left: 16px;//文字靠右
+                    }
+                    // 教师简介
+                    .teacher-group{
+                        overflow: hidden;
+                         margin-top: 20px;
+
+                        .left-avatar-group{
+                            float: left;
+                            width: 60px;
+                            height: 60px;
+                            // 不设置图片宽度，图片的宽度会超过
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+                        .right-teacher-info{
+                            float: left;
+                            margin-left: 20px;
+                            color: #696969;
+                            line-height: 30px;
+                        }
+                    }
+                    // 内容
+                    .item-content{
+                        margin-top: 20px;
+                        font-size: 15px;
+                        color: #444;
+                        line-height: 2.2; // 当前字体的2.2倍
+                    }
+                }
+            }
+            // 右侧：推荐
+            .recommend-wrapper{
+                float: right; //右侧宽度
+                width: 355px;
+                background: #fff;
+                padding: 20px;
+                box-sizing: border-box;
+
+                .recommend-title{
+                    color: $mainFontColor;
+                    font-size: 18px;
+                }
+                .course-list-group{
+                    li{
+                        overflow: hidden;
+                        padding: 20px 0;
+                        border-bottom: 1px solid $lineColor;
+                        .left-course-info-group{
+                            float: left;
+                            width: 150px;
+                            height: 90px;
+                            position: relative;
+
+                            .top-course-title{
+                                font-size: 16px;
+                                color:  $titleFontColor;
+                            }
+                            .bottom-teacher{
+                                color: $assistFontColor;
+                                font-size: 12px;
+                                // 不换行
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                // 文字超出宽度将隐藏
+                                overflow: hidden;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                            }
+                        }
+                        .right-recommend-group{
+                            float: right;
+                            width: 160px;
+                            height: 90px;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+}
