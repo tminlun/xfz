@@ -1,0 +1,171 @@
+@import "../common/init";
+@import "../common/constant";
+
+body{
+    background-image: url("https://static.zhihu.com/heifetz/assets/sign_bg.db29b0fb.png");
+    background-repeat: no-repeat;
+    background-color: #b8e5f8;
+    //把背景图像扩展至足够大，以使背景图像完全覆盖背景区域
+    background-size: cover;
+    padding-right: 15px;
+}
+
+// 背景颜色、背景图铺满整个页面
+.mask-wrapper{
+    position: fixed; // 占满页面
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow-y: scroll;//子盒子溢出，父盒子y轴滚动
+    display: none;
+
+    //登录注册
+    .auth-wrapper{
+        //动态改变高度
+        $authWrapperHeight: 520px;
+        $authWrapperWidth: 400px;
+
+        width: $authWrapperWidth;
+        height: $authWrapperHeight;
+        margin: 40px auto; //上下：40。左右居中
+
+        //上
+        .top-close-wrapper{
+            width: 100%;
+            height: 40px;
+            background: #fff;
+
+            //span为行块元素
+            .close-btn{
+                display: inline-block; //具有行和块特性（可以text-text-align,可以设置宽高）
+                width: 30px;
+                height: 30px;
+                float: right;
+                line-height: 40px;
+                //margin-top: 10px;
+                // 设置span样式大小
+                font-size: 15px;
+                color: $assistFontColor;
+                cursor: pointer;
+            }
+        }
+        //下
+        .bottom-auth-inner-wrapper{
+            width: 100%;
+            height: $authWrapperHeight - 40px;
+            position: relative;
+            overflow: hidden; //只显示登录或注册其一
+
+
+            //切换时改变宽度（滚动大盒子）
+            .scroll-wrapper{
+                width: $authWrapperWidth * 2;
+                //height: 100%; // 父标签有了高度，子标签有浮动无需overflow:hidden
+                // js需要改变宽度时，进行绝对定位
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                // 登录、注册同一行显示
+                .signin-group {
+                    float: left;
+                    background: #fff;
+                }
+                .signup-group{
+                    float: left;
+                    background: #fff;
+                }
+                //公共样式
+                .auth-group{
+                    width: $authWrapperWidth; //宽度为滚动大盒子的一半
+                    height: 100%;
+                    padding: 0 20px 20px 20px;
+                    box-sizing: border-box;
+
+                    // 切换按钮
+                    .cut-group{
+                        height: 36px; //设置高后，子标签浮动无需hidden
+                        border-bottom: 1px solid $lineColor;
+                        line-height: 33px;
+
+                        .title{
+                            float: left;
+                            color: $mainFontColor;
+                            border-bottom: 3px solid $themeColor;
+
+                        }
+                        .switch{
+                            float: right;
+                            color: $themeColor;
+                        }
+
+                    }
+
+                    //表单
+                    .form-group{
+                        margin-top: 20px;
+
+                        .input-group{
+                            margin-bottom: 20px;
+                            overflow: hidden;
+
+                            // 输入框
+                            .form-control{
+                                border: 1px solid #ccc;
+                                padding: 10px; // 让提示文本居中
+                                box-sizing: border-box;
+                                width: 100%;
+                                height: 40px;
+                                outline: none;
+                            }
+                            // 记住我
+                            .remember-label{
+                                font-size: 14px;
+                                color: $mainFontColor;
+                                line-height: 14px;
+
+                                .remember{
+                                    margin-right: 10px;
+                                }
+                            }
+                            //按钮
+                            .submit-btn{
+                                width: 100%;
+                                height: 40px;
+                                background-color: $themeColor;
+                                color: #fff;
+                                cursor: pointer;
+                            }
+                            //验证码
+                            .short-input-group{
+                                width: 250px;
+                                float: left;
+                                margin-right: 10px;
+                            }
+                            //验证码
+                            .input-group-addon{
+                                float: right;
+                                width: 100px;
+
+                                // 短信验证码span
+                                .sms-captcha-btn{
+                                    display: inline-block;
+                                    width: 100%;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    text-align: center;
+                                    border: 1px solid $themeColor;
+                                    box-sizing: border-box;
+                                    color: $themeColor;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
